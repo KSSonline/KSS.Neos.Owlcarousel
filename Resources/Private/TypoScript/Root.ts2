@@ -1,0 +1,25 @@
+/**
+ * Company: KSS services/solutions
+ * User: Alexander Kappler
+ * Date: 12.03.14
+ */
+
+prototype(KSS.Owlcarousel:Carousel) {
+	carouselItems = TYPO3.Neos:ContentCollection {
+			nodePath = 'owlCarouselItems'
+			iterationName = 'carouselItemsIteration'
+			attributes.class = 'owl-carousel'
+	}
+
+	// Enhance image prototype when inside the carousel
+	prototype(TYPO3.Neos.NodeTypes:Image) {
+			// Render images in the carousel with a special template.
+			templatePath = 'resource://KSS.Owlcarousel/Private/Templates/TypoScriptObjects/CarouselItem.html'
+
+			// The first item should later be marked as active
+			attributes.class = ${'item' + (carouselItemsIteration.isFirst ? ' active' : '')}
+
+			// We want to use the item iterator in fluid so we have to store it as variable.
+			iteration = ${carouselItemsIteration}
+	}
+}

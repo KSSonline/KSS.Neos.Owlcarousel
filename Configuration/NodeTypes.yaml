@@ -1,0 +1,13 @@
+##
+# A "Owl Carousel" content element that renders "Image" child nodes into a JavaScript based slideshow
+#
+'KSS.Owlcarousel:Carousel':
+  superTypes: ['TYPO3.Neos:Content']
+  childNodes:
+    owlCarouselItems:
+      type: 'TYPO3.Neos:ContentCollection'
+  ui:
+    label: 'Owl-Carousel'
+    group: 'plugins'
+    icon: 'icon-play-circle'
+    inlineEditable: TRUE

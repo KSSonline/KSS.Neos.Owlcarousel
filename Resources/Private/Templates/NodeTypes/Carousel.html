@@ -1,0 +1,21 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+<div id="{node.identifier}">
+	<div{attributes -> f:format.raw()}>
+		{carouselItems -> f:format.raw()}
+	</div>
+</div>
+<script type="application/javascript">
+	$(document).ready(function(){
+		$(".owl-carousel").owlCarousel({
+
+			autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+			items : 3,
+			itemsDesktop : [1199,3],
+			itemsDesktopSmall : [979,2],
+			itemsMobile : [767,1]
+
+		});
+	});
+</script>
