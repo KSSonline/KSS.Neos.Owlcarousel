@@ -1,7 +1,7 @@
 KSS.Owlcarousel v.0.1
 ===============
 
-TYPO3 Neos Plugin for generating a carousel with the famous "Owl Carousel". Main plus points: touch enabled, CSS3 animations, responsive and multiply
+TYPO3 Neos Plugin for generating a carousel with the famous "Owl Carousel". Benefits: touch enabled, CSS3 animations, responsive and multiply
 
 
 1.) Install plugin
