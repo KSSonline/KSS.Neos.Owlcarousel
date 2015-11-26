@@ -4,14 +4,11 @@
     "description": "Content carousel based on the owlcarousel",
     "version": "0.1",
     "require": {
-        "typo3/flow": "*",
-        "typo3/typoscript": "*",
-        "typo3/neos": "1.0.*"
-
+        "typo3/neos": "2.*"
     },
     "autoload": {
         "psr-0": {
-            "DMF\\SeoTool": "Classes"
+            "KSS\\Owlcarousel": "Classes"
         }
     }
 }

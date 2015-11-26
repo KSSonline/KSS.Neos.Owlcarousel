@@ -5,6 +5,11 @@
  */
 
 prototype(KSS.Owlcarousel:Carousel) {
+	items = ${q(node).property('items')}
+	itemsDesktop = ${q(node).property('itemsdesktop')}
+	itemsTablet = ${q(node).property('itemstablet')}
+	itemsMobile = ${q(node).property('itemsmobile')}
+
 	carouselItems = TYPO3.Neos:ContentCollection {
 			nodePath = 'owlCarouselItems'
 			iterationName = 'carouselItemsIteration'

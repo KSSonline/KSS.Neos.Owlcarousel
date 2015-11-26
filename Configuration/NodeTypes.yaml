@@ -11,3 +11,40 @@
     group: 'plugins'
     icon: 'icon-play-circle'
     inlineEditable: TRUE
+    inspector:
+      groups:
+        owlcarousel:
+          label: 'Owl Carousel Settings'
+  properties:
+    items:
+      type: integer
+      defaultValue: '3'
+      ui:
+        label: 'Anzahl der Elemente (Standard):'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'owlcarousel'
+    itemsdesktop:
+      type: integer
+      defaultValue: '3'
+      ui:
+        label: 'Anzahl der Elemente für Desktop:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'owlcarousel'
+    itemstablet:
+      type: integer
+      defaultValue: '2'
+      ui:
+        label: 'Anzahl der Elemente für Tablet:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'owlcarousel'
+    itemsmobile:
+      type: integer
+      defaultValue: '1'
+      ui:
+        label: 'Anzahl der Elemente für Mobile:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'owlcarousel'

@@ -6,16 +6,17 @@
 	</div>
 </div>
 <script type="application/javascript">
+	<![CDATA[
 	$(document).ready(function(){
-		$(".owl-carousel").owlCarousel({
+		$("#]]>{node.identifier}<![CDATA[ .owl-carousel").owlCarousel({
 
 			autoPlay: 3000, //Set AutoPlay to 3 seconds
 
-			items : 3,
-			itemsDesktop : [1199,3],
-			itemsDesktopSmall : [979,2],
-			itemsMobile : [767,1]
+			items : ]]>{f:if(condition: '{items} > 0', then: items, else: '1')}<![CDATA[,
+			itemsDesktop : [1199,]]>{f:if(condition: '{itemsDestop} > 0', then: items, else: '1')}<![CDATA[],
+			itemsDesktopSmall : [979,]]>{f:if(condition: '{itemsTablet} > 0', then: items, else: '1')}<![CDATA[],
+			itemsMobile : [767,]]>{f:if(condition: '{itemsMobile} > 0', then: items, else: '1')}<![CDATA[]
 
 		});
-	});
+	});]]>
 </script>
