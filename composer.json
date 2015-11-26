@@ -2,7 +2,6 @@
     "name": "kss/owlcarousel",
     "type": "typo3-flow-package",
     "description": "Content carousel based on the owlcarousel",
-    "version": "0.1",
     "require": {
         "typo3/neos": "2.*"
     },
