@@ -1,30 +1,45 @@
 /**
- * Company: KSS services/solutions
- * User: Alexander Kappler
- * Date: 12.03.14
- */
+* Company: KSS services/solutions
+* User: Alexander Kappler
+* Date: 12.03.14
+*/
 
 prototype(KSS.Owlcarousel:Carousel) {
-	items = ${q(node).property('items')}
-	itemsDesktop = ${q(node).property('itemsdesktop')}
-	itemsTablet = ${q(node).property('itemstablet')}
-	itemsMobile = ${q(node).property('itemsmobile')}
+
+	slickConfig = TYPO3.TypoScript:RawArray {
+		items      			= ${q(node).property('items') > 0 ? q(node).property('items') : 5}
+		itemsDesktop        = ${q(node).property('itemsDesktop') > 0 ? '[' + q(node).property('itemsDesktopWidth') + ',' + q(node).property('items') + ']' : '[1199,3]'}
+		itemsTablet       	= ${q(node).property('itemsTablet') > 0 ? '[' + q(node).property('itemsTabletWidth') + ',' + q(node).property('items') + ']' : '[767,2]'}
+		itemsMobile         = ${q(node).property('itemsMobile') > 0 ? '[' + q(node).property('itemsMobileWidth') + ',' + q(node).property('items') + ']' : '[320,1]'}
+		itemsScaleUp        = ${q(node).property('itemsScaleUp') ? true : false}
+		singleItem          = ${q(node).property('singleItem') ? true : false}
+
+		navigation          = ${q(node).property('navigation') ? false : true}
+		pagination          = ${q(node).property('pagination') ? false : true}
+		paginationSpeed		= ${q(node).property('paginationSpeed') > 0 ? q(node).property('paginationSpeed') : 800}
+		paginationNumbers   = ${q(node).property('paginationNumbers') ? true : false}
+		rewindNav           = ${q(node).property('rewindNav') ? false : true}
+		stopOnHover         = ${q(node).property('stopOnHover') ? false : true}
+		autoPlay            = ${q(node).property('autoPlay') > 0 ? q(node).property('autoPlay') : false}
+		slideSpeed          = ${q(node).property('slideSpeed') > 0 ? q(node).property('slideSpeed') : 200}
+		responsive			= ${q(node).property('responsive') ? false : true}
+	}
 
 	carouselItems = TYPO3.Neos:ContentCollection {
-			nodePath = 'owlCarouselItems'
-			iterationName = 'carouselItemsIteration'
-			attributes.class = 'owl-carousel'
+		nodePath = 'owlCarouselItems'
+		iterationName = 'carouselItemsIteration'
+		attributes.class = 'owl-carousel'
 	}
 
 	// Enhance image prototype when inside the carousel
 	prototype(TYPO3.Neos.NodeTypes:Image) {
-			// Render images in the carousel with a special template.
-			templatePath = 'resource://KSS.Owlcarousel/Private/Templates/TypoScriptObjects/CarouselItem.html'
+		// Render images in the carousel with a special template.
+		templatePath = 'resource://KSS.Owlcarousel/Private/Templates/TypoScriptObjects/CarouselItem.html'
 
-			// The first item should later be marked as active
-			attributes.class = ${'item' + (carouselItemsIteration.isFirst ? ' active' : '')}
+		// The first item should later be marked as active
+		attributes.class = ${'item' + (carouselItemsIteration.isFirst ? ' active' : '')}
 
-			// We want to use the item iterator in fluid so we have to store it as variable.
-			iteration = ${carouselItemsIteration}
+		// We want to use the item iterator in fluid so we have to store it as variable.
+		iteration = ${carouselItemsIteration}
 	}
 }

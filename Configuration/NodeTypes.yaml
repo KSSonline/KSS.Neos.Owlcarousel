@@ -13,9 +13,19 @@
     inlineEditable: TRUE
     inspector:
       groups:
-        owlcarousel:
-          label: 'Owl Carousel Settings'
+        items:
+          label: 'Elemente Einstellungen'
+        others:
+          label: 'Weitere Einstellungen'
   properties:
+    singleItem:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: 'Max 1 Element:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'items'
     items:
       type: integer
       defaultValue: '3'
@@ -23,28 +33,124 @@
         label: 'Anzahl der Elemente (Standard):'
         reloadIfChanged: TRUE
         inspector:
-          group: 'owlcarousel'
-    itemsdesktop:
+          group: 'items'
+    itemsDesktopWidth:
+      type: integer
+      defaultValue: '1199'
+      ui:
+        label: 'Desktop Auflösung (in px):'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'items'
+    itemsDesktop:
       type: integer
       defaultValue: '3'
       ui:
         label: 'Anzahl der Elemente für Desktop:'
         reloadIfChanged: TRUE
         inspector:
-          group: 'owlcarousel'
-    itemstablet:
+          group: 'items'
+    itemsTabletWidth:
+      type: integer
+      defaultValue: '768'
+      ui:
+        label: 'Tablet Auflösung (in px):'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'items'
+    itemsTablet:
       type: integer
       defaultValue: '2'
       ui:
         label: 'Anzahl der Elemente für Tablet:'
         reloadIfChanged: TRUE
         inspector:
-          group: 'owlcarousel'
-    itemsmobile:
+          group: 'items'
+    itemsMobileWidth:
+      type: integer
+      defaultValue: '479'
+      ui:
+        label: 'Mobile Auflösung (in px):'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'items'
+    itemsMobile:
       type: integer
       defaultValue: '1'
       ui:
         label: 'Anzahl der Elemente für Mobile:'
         reloadIfChanged: TRUE
         inspector:
-          group: 'owlcarousel'
+          group: 'items'
+    autoPlay:
+      type: integer
+      defaultValue: 0
+      ui:
+        label: 'Autoplay aktiv bei > 0:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'others'
+    responsive:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: 'Responsive:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'others'
+    navigation:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: 'Zeige Navigation:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'others'
+    pagination:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: 'Zeige Pagination:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'others'
+    paginationSpeed:
+      type: integer
+      defaultValue: 800
+      ui:
+        label: 'Pagination Speed:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'others'
+    paginationNumbers:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: 'Zeige Zahlen in Pagination:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'others'
+    rewindNav:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: 'Schleife:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'others'
+    stopOnHover:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: 'Stop Autoplay bei Hover:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'others'
+    slideSpeed:
+      type: integer
+      defaultValue: 200
+      ui:
+        label: 'Slide Geschwindigkeit:'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'others'
