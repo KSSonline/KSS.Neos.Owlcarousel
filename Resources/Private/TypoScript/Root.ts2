@@ -14,15 +14,15 @@ prototype(KSS.Owlcarousel:Carousel) {
 		itemsScaleUp        = ${q(node).property('itemsScaleUp') ? true : false}
 		singleItem          = ${q(node).property('singleItem') ? true : false}
 
-		navigation          = ${q(node).property('navigation') ? false : true}
-		pagination          = ${q(node).property('pagination') ? false : true}
+		navigation          = ${q(node).property('navigation') ? true : false}
+		pagination          = ${q(node).property('pagination') ? true : false}
 		paginationSpeed		= ${q(node).property('paginationSpeed') > 0 ? q(node).property('paginationSpeed') : 800}
 		paginationNumbers   = ${q(node).property('paginationNumbers') ? true : false}
-		rewindNav           = ${q(node).property('rewindNav') ? false : true}
-		stopOnHover         = ${q(node).property('stopOnHover') ? false : true}
+		rewindNav           = ${q(node).property('rewindNav') ? true : false}
+		stopOnHover         = ${q(node).property('stopOnHover') ? true : false}
 		autoPlay            = ${q(node).property('autoPlay') > 0 ? q(node).property('autoPlay') : false}
 		slideSpeed          = ${q(node).property('slideSpeed') > 0 ? q(node).property('slideSpeed') : 200}
-		responsive			= ${q(node).property('responsive') ? false : true}
+		responsive			= ${q(node).property('responsive') ? true : false}
 	}
 
 	carouselItems = TYPO3.Neos:ContentCollection {
