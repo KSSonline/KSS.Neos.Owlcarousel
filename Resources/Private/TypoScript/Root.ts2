@@ -6,7 +6,7 @@
 
 prototype(KSS.Owlcarousel:Carousel) {
 
-	slickConfig = TYPO3.TypoScript:RawArray {
+	owlConfig = TYPO3.TypoScript:RawArray {
 		items      			= ${q(node).property('items') > 0 ? q(node).property('items') : 5}
 		itemsDesktop        = ${q(node).property('itemsDesktop') > 0 ? '[' + q(node).property('itemsDesktopWidth') + ',' + q(node).property('items') + ']' : '[1199,3]'}
 		itemsTablet       	= ${q(node).property('itemsTablet') > 0 ? '[' + q(node).property('itemsTabletWidth') + ',' + q(node).property('items') + ']' : '[767,2]'}
