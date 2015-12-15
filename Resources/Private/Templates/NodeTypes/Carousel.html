@@ -10,6 +10,10 @@
 	$(document).ready(function(){
 		if(!$('body').hasClass('neos-backend')){
 			var config = {owlConfig -> f:format.json() -> f:format.raw()};
+            <f:for each="{devices}" as="device">
+                config.responsive["{device.responsive}"].items = {device.items};
+            </f:for>
+
 			var owlIdent = '#{node.identifier}'
 
 			$( owlIdent + " .owl-carousel").owlCarousel(config);

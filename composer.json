@@ -1,13 +1,13 @@
 {
-    "name": "kss/owlcarousel",
-    "type": "typo3-flow-package",
+    "name": "kss/neos-owlcarousel",
+    "type": "typo3-flow-plugin",
     "description": "Content carousel based on the owlcarousel",
     "require": {
         "typo3/neos": "2.*"
     },
     "autoload": {
         "psr-0": {
-            "KSS\\Owlcarousel": "Classes"
+            "KSS\\Neos\\Owlcarousel": "Classes"
         }
     }
 }

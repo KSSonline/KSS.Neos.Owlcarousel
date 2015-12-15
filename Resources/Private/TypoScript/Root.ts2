@@ -5,6 +5,20 @@
 */
 
 prototype(KSS.Owlcarousel:Carousel) {
+	devices = TYPO3.TypoScript:RawArray {
+		0 = TYPO3.TypoScript:RawArray {
+			responsive = 0
+			items = ${q(node).property('itemsMobile')}
+		}
+		1 = TYPO3.TypoScript:RawArray {
+			responsive = ${q(node).property('itemsMobileWidth')}
+			items = ${q(node).property('itemsTablet')}
+		}
+		2 = TYPO3.TypoScript:RawArray {
+			responsive = ${q(node).property('itemsTabletWidth')}
+			items = ${q(node).property('itemsDesktop')}
+		}
+	}
 
 	owlConfig = TYPO3.TypoScript:RawArray {
 		items      			= ${q(node).property('items') > 0 ? q(node).property('items') : 5}
@@ -14,15 +28,16 @@ prototype(KSS.Owlcarousel:Carousel) {
 		itemsScaleUp        = ${q(node).property('itemsScaleUp') ? true : false}
 		singleItem          = ${q(node).property('singleItem') ? true : false}
 
-		navigation          = ${q(node).property('navigation') ? true : false}
+		nav          		= ${q(node).property('navigation') ? true : false}
 		pagination          = ${q(node).property('pagination') ? true : false}
 		paginationSpeed		= ${q(node).property('paginationSpeed') > 0 ? q(node).property('paginationSpeed') : 800}
 		paginationNumbers   = ${q(node).property('paginationNumbers') ? true : false}
 		rewindNav           = ${q(node).property('rewindNav') ? true : false}
-		stopOnHover         = ${q(node).property('stopOnHover') ? true : false}
-		autoPlay            = ${q(node).property('autoPlay') > 0 ? q(node).property('autoPlay') : false}
+		autoplayHoverPause  = ${q(node).property('stopOnHover') ? true : false}
+		autoplay            = ${q(node).property('autoPlay') > 0 ? q(node).property('autoPlay') : false}
+		loop				= ${q(node).property('loop') ? true : false}
 		slideSpeed          = ${q(node).property('slideSpeed') > 0 ? q(node).property('slideSpeed') : 200}
-		responsive			= ${q(node).property('responsive') ? true : false}
+		responsiveClass		= ${q(node).property('responsive') ? true : false}
 	}
 
 	carouselItems = TYPO3.Neos:ContentCollection {
@@ -34,7 +49,7 @@ prototype(KSS.Owlcarousel:Carousel) {
 	// Enhance image prototype when inside the carousel
 	prototype(TYPO3.Neos.NodeTypes:Image) {
 		// Render images in the carousel with a special template.
-		templatePath = 'resource://KSS.Owlcarousel/Private/Templates/TypoScriptObjects/CarouselItem.html'
+		templatePath = 'resource://KSS.Neos.Owlcarousel/Private/Templates/TypoScriptObjects/CarouselItem.html'
 
 		// The first item should later be marked as active
 		attributes.class = ${'item' + (carouselItemsIteration.isFirst ? ' active' : '')}

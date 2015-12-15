@@ -1,7 +1,7 @@
 ##
 # A "Owl Carousel" content element that renders "Image" child nodes into a JavaScript based slideshow
 #
-'KSS.Owlcarousel:Carousel':
+'KSS.Neos.Owlcarousel:Carousel':
   superTypes: ['TYPO3.Neos:Content']
   childNodes:
     owlCarouselItems:
@@ -143,6 +143,14 @@
       defaultValue: true
       ui:
         label: 'Stop Autoplay bei Hover'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'others'
+    loop:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: 'Loop Animation:'
         reloadIfChanged: TRUE
         inspector:
           group: 'others'
