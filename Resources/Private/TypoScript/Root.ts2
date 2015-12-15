@@ -4,7 +4,7 @@
 * Date: 12.03.14
 */
 
-prototype(KSS.Owlcarousel:Carousel) {
+prototype(KSS.Neos.Owlcarousel:Carousel) {
 	devices = TYPO3.TypoScript:RawArray {
 		0 = TYPO3.TypoScript:RawArray {
 			responsive = 0
@@ -22,9 +22,6 @@ prototype(KSS.Owlcarousel:Carousel) {
 
 	owlConfig = TYPO3.TypoScript:RawArray {
 		items      			= ${q(node).property('items') > 0 ? q(node).property('items') : 5}
-		itemsDesktop        = ${q(node).property('itemsDesktop') > 0 ? '[' + q(node).property('itemsDesktopWidth') + ',' + q(node).property('items') + ']' : '[1199,3]'}
-		itemsTablet       	= ${q(node).property('itemsTablet') > 0 ? '[' + q(node).property('itemsTabletWidth') + ',' + q(node).property('items') + ']' : '[767,2]'}
-		itemsMobile         = ${q(node).property('itemsMobile') > 0 ? '[' + q(node).property('itemsMobileWidth') + ',' + q(node).property('items') + ']' : '[320,1]'}
 		itemsScaleUp        = ${q(node).property('itemsScaleUp') ? true : false}
 		singleItem          = ${q(node).property('singleItem') ? true : false}
 
@@ -34,9 +31,9 @@ prototype(KSS.Owlcarousel:Carousel) {
 		paginationNumbers   = ${q(node).property('paginationNumbers') ? true : false}
 		rewindNav           = ${q(node).property('rewindNav') ? true : false}
 		autoplayHoverPause  = ${q(node).property('stopOnHover') ? true : false}
-		autoplay            = ${q(node).property('autoPlay') > 0 ? q(node).property('autoPlay') : false}
+		autoplay            = ${q(node).property('autoPlay') ? true : false}
 		loop				= ${q(node).property('loop') ? true : false}
-		slideSpeed          = ${q(node).property('slideSpeed') > 0 ? q(node).property('slideSpeed') : 200}
+		autoplaySpeed       = ${q(node).property('slideSpeed') > 0 ? q(node).property('slideSpeed') : 200}
 		responsiveClass		= ${q(node).property('responsive') ? true : false}
 	}
 

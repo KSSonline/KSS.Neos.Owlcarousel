@@ -83,10 +83,10 @@
         inspector:
           group: 'items'
     autoPlay:
-      type: integer
-      defaultValue: 0
+      type: boolean
+      defaultValue: true
       ui:
-        label: 'Autoplay aktiv bei > 0:'
+        label: 'Autoplay:'
         reloadIfChanged: TRUE
         inspector:
           group: 'others'

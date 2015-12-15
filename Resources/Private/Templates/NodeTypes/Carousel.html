@@ -10,7 +10,9 @@
 	$(document).ready(function(){
 		if(!$('body').hasClass('neos-backend')){
 			var config = {owlConfig -> f:format.json() -> f:format.raw()};
+            config.responsive = {};
             <f:for each="{devices}" as="device">
+                config.responsive["{device.responsive}"] = {};
                 config.responsive["{device.responsive}"].items = {device.items};
             </f:for>
 
