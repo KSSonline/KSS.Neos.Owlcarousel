@@ -106,6 +106,22 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'others'
+    navTextPrev:
+      type: string
+      defaultValue: 'Prev'
+      ui:
+        label: 'Prev text - HTML erlaubt'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'others'
+    navTextNext:
+      type: string
+      defaultValue: 'Next'
+      ui:
+        label: 'Next text - HTML erlaubt'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'others'
     pagination:
       type: boolean
       defaultValue: true

@@ -55,3 +55,100 @@ prototype(KSS.Neos.Owlcarousel:Carousel) {
 		iteration = ${carouselItemsIteration}
 	}
 }
+
+page.head.stylesheets.owlCarousel = TYPO3.TypoScript:Tag {
+	tagName = 'link'
+	omitClosingTag = FALSE
+
+	attributes {
+		rel = 'stylesheet'
+		type = 'text/css'
+		href = TYPO3.TypoScript:ResourceUri {
+			path = 'resource://KSS.Neos.Owlcarousel/Public/Styles/owl.carousel.css'
+		}
+	}
+}
+page.head.stylesheets.owlCarousel.@position = 'end'
+page.head.stylesheets.owlCarousel.@if.hasNodeType = ${q(node).find('[instanceof KSS.Neos.Owlcarousel:Carousel]').is()}
+page.head.stylesheets.owlCarousel.@if.isInLiveContext = ${documentNode.context.inBackend ? false : true}
+
+page.body.javascripts.owlCarousel = TYPO3.TypoScript:Tag {
+    tagName = 'script'
+    omitClosingTag = FALSE
+
+    attributes {
+        type = 'text/javascript'
+        src = TYPO3.TypoScript:ResourceUri {
+            path = 'resource://KSS.Neos.Owlcarousel/Public/JavaScript/owl.carousel.min.js'
+        }
+    }
+}
+page.body.javascripts.owlCarousel.@position = 'after jquery'
+page.body.javascripts.owlCarousel.@if.hasNodeType = ${q(node).find('[instanceof KSS.Neos.Owlcarousel:Carousel]').is()}
+
+
+page.body.javascripts.initOwlCarousel = TYPO3.TypoScript:Tag {
+	tagName = 'script'
+	omitClosingTag = FALSE
+
+	attributes {
+		type = 'text/javascript'
+		src = TYPO3.TypoScript:ResourceUri {
+			path = 'resource://KSS.Neos.Owlcarousel/Public/JavaScript/init.owl.carousel.js'
+		}
+	}
+}
+page.body.javascripts.initOwlCarousel.@position = 'after owlCarousel'
+page.body.javascripts.initOwlCarousel.@if.hasNodeType = ${q(node).find('[instanceof KSS.Neos.Owlcarousel:Carousel]').is()}
+page.body.javascripts.initOwlCarousel.@if.isInLiveContext = ${documentNode.context.inBackend ? false : true}
+
+prototype(Page) {
+	// Only add element if in live context and if element exists on page
+	head.stylesheets.owlCarousel = TYPO3.TypoScript:Tag {
+		tagName = 'link'
+		omitClosingTag = FALSE
+
+		attributes {
+			rel = 'stylesheet'
+			type = 'text/css'
+			href = TYPO3.TypoScript:ResourceUri {
+				path = 'resource://KSS.Neos.Owlcarousel/Public/Styles/owl.carousel.css'
+			}
+		}
+	}
+	head.stylesheets.owlCarousel.@position = 'end'
+	head.stylesheets.owlCarousel.@if.hasNodeType = ${q(node).find('[instanceof KSS.Neos.Owlcarousel:Carousel]').is()}
+	head.stylesheets.owlCarousel.@if.isInLiveContext = ${documentNode.context.inBackend ? false : true}
+
+	body.javascripts.owlCarousel = TYPO3.TypoScript:Tag {
+		tagName = 'script'
+		omitClosingTag = FALSE
+
+		attributes {
+			type = 'text/javascript'
+			src = TYPO3.TypoScript:ResourceUri {
+				path = 'resource://KSS.Neos.Owlcarousel/Public/JavaScript/owl.carousel.min.js'
+			}
+		}
+	}
+	body.javascripts.owlCarousel.@position = 'after jquery'
+	body.javascripts.owlCarousel.@if.hasNodeType = ${q(node).find('[instanceof KSS.Neos.Owlcarousel:Carousel]').is()}
+	body.javascripts.owlCarousel.@if.isInLiveContext = ${documentNode.context.inBackend ? false : true}
+
+	// Only add element if in live context and if element exists on page
+	body.javascripts.initOwlCarousel = TYPO3.TypoScript:Tag {
+		tagName = 'script'
+		omitClosingTag = FALSE
+
+		attributes {
+			type = 'text/javascript'
+			src = TYPO3.TypoScript:ResourceUri {
+				path = 'resource://KSS.Neos.Owlcarousel/Public/JavaScript/init.owl.carousel.js'
+			}
+		}
+	}
+	body.javascripts.initOwlCarousel.@position = 'after owlCarousel'
+	body.javascripts.initOwlCarousel.@if.hasNodeType = ${q(node).find('[instanceof KSS.Neos.Owlcarousel:Carousel]').is()}
+	body.javascripts.initOwlCarousel.@if.isInLiveContext = ${documentNode.context.inBackend ? false : true}
+
+}

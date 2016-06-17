@@ -4,7 +4,7 @@
 	<div{attributes -> f:format.raw()}>
 		<f:if condition="{image}">
 			<f:then>
-				<media:image image="{image}" alt="{alternativeText} ag" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" />
+				<media:image image="{image}" alt="{alternativeText} ag" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}"  allowCropping="{allowCropping}" allowUpScaling="{allowUpScaling}" />
 			</f:then>
 			<f:else>
 				<img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.png')}" title="Dummy image" alt="Dummy image" />
